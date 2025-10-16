@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery Round 2</title>
+    <title>Round 2</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,34 +26,40 @@
         }
         .caption {
             text-align: center;
+            font-size: 0.9em;
             margin: 5px 0;
         }
         button {
-            padding: 10px;
-            margin: 10px 0;
+            margin: 20px 0;
+            padding: 10px 15px;
             cursor: pointer;
         }
     </style>
 </head>
 <body class="light">
-    <h1>Image Gallery Round 2</h1>
-    <button id="theme-toggle">Toggle Theme</button>
-    <div id="gallery">
-        <img src="https://images.unsplash.com/photo-1600585154320-1b5f8f4b5b3a" alt="First Image">
-        <div class="caption">Caption for the first image</div>
-        <img src="https://images.unsplash.com/photo-1600585154320-1b5f8f4b5b3a" alt="Second Image">
-        <div class="caption">Caption for the second image</div>
-        <img src="https://images.unsplash.com/photo-1600585154320-1b5f8f4b5b3a" alt="Third Image">
-        <div class="caption">Caption for the third image</div>
+    <h1>Round 2</h1>
+    <button id="toggle-theme">Toggle Theme</button>
+
+    <div id="image-gallery">
+        <img src="https://images.unsplash.com/photo-1515378812028-1a0d1d3e1c3c" alt="Image 1">
+        <div class="caption">Image 1 Caption</div>
+        
+        <img src="https://images.unsplash.com/photo-1515378812028-1a0d1d3e1c3" alt="Image 2">
+        <div class="caption">Image 2 Caption</div>
+        
+        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt="Image 3">
+        <div class="caption">Image 3 Caption</div>
     </div>
+
     <script>
-        const themeToggleButton = document.getElementById('theme-toggle');
-        themeToggleButton.addEventListener('click', () => {
+        const toggleThemeButton = document.getElementById('toggle-theme');
+        toggleThemeButton.addEventListener('click', () => {
             document.body.classList.toggle('dark');
             document.body.classList.toggle('light');
         });
     </script>
-    <!-- build-id: 2023-10-05T12:00:00Z -->
+    
+    <!-- build-id: 2023-10-06T12:00:00Z -->
 </body>
 </html>
-<!-- build-id: 2025-10-16T12:39:05.085912 -->
+<!-- build-id: 2025-10-16T12:47:32.007469 -->
