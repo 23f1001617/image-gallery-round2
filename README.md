@@ -2,7 +2,7 @@
 
 Generated app for:
 
-> Enhance the existing image gallery from Round 1. Keep the same two Unsplash image URLs and captions. Add a 'Toggle Theme' button that switches between light and dark modes, and implement a smooth fade-in animation for images using inline CSS and JS. Do not remove or reload images from the web.
+> Update the existing 'Image Gallery Round 1' page to include a new third image (fixed Unsplash URL) below the first two, with its own caption. Ensure all three images load successfully and retain the light/dark theme toggle. Show 'Round 2' in the page title.
 
 ---
 MIT License
