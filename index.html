@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery with Theme Toggle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s, color 0.5s;
+            background-color: white;
+            color: black;
+        }
+        body.dark {
+            background-color: #333;
+            color: white;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 10px;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .gallery img.show {
+            opacity: 1;
+        }
+        .caption {
+            text-align: center;
+            margin: 5px 0;
+        }
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle">Toggle Theme</button>
+    <div class="gallery" id="gallery"></div>
+    <div id="error-message" style="color: red;"></div>
+    <footer><!-- build-id: 2023-10-03T12:00:00Z --></footer>
+
+    <script>
+        const galleryElement = document.getElementById('gallery');
+        const errorMessage = document.getElementById('error-message');
+        const themeToggleButton = document.getElementById('theme-toggle');
+
+        themeToggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+
+        fetch('./images.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => {
+                data.images.forEach((image, index) => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = image.url;
+                    imgElement.alt = image.caption;
+                    imgElement.classList.add('show');
+                    imgElement.onload = () => imgElement.classList.add('show');
+
+                    const captionElement = document.createElement('div');
+                    captionElement.className = 'caption';
+                    captionElement.textContent = image.caption;
+
+                    galleryElement.appendChild(imgElement);
+                    galleryElement.appendChild(captionElement);
+                });
+            })
+            .catch(error => {
+                errorMessage.textContent = 'Failed to load data.';
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    </script>
+</body>
+</html>
+<!-- build-id: 2025-10-16T12:11:18.295120 -->
