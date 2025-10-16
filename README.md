@@ -2,7 +2,7 @@
 
 Generated app for:
 
-> Update the previous gallery to include a 'Toggle Theme' button and fade-in effect for images using inline CSS and JavaScript.
+> Enhance the existing image gallery from Round 1. Keep the same two Unsplash image URLs and captions. Add a 'Toggle Theme' button that switches between light and dark modes, and implement a smooth fade-in animation for images using inline CSS and JS. Do not remove or reload images from the web.
 
 ---
 MIT License
