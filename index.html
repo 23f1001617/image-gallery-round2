@@ -3,77 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery</title>
+    <title>Image Gallery Round 2</title>
     <style>
         body {
-            transition: background-color 0.5s, color 0.5s;
-            background-color: white;
-            color: black;
             font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
             padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
         }
-        .dark-mode {
-            background-color: #121212;
-            color: white;
+        body.light {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        body.dark {
+            background-color: #333333;
+            color: #ffffff;
         }
         img {
             max-width: 100%;
             border-radius: 8px;
-            opacity: 0;
-            transition: opacity 1s;
-        }
-        img.loaded {
-            opacity: 1;
+            margin: 10px 0;
         }
         .caption {
-            margin-top: 10px;
+            text-align: center;
+            margin: 5px 0;
         }
         button {
-            padding: 10px 20px;
-            margin-bottom: 20px;
+            padding: 10px;
+            margin: 10px 0;
             cursor: pointer;
         }
     </style>
 </head>
-<body>
-    <button id="toggle-theme">Toggle Theme</button>
-    <div id="gallery"></div>
-
+<body class="light">
+    <h1>Image Gallery Round 2</h1>
+    <button id="theme-toggle">Toggle Theme</button>
+    <div id="gallery">
+        <img src="https://images.unsplash.com/photo-1600585154320-1b5f8f4b5b3a" alt="First Image">
+        <div class="caption">Caption for the first image</div>
+        <img src="https://images.unsplash.com/photo-1600585154320-1b5f8f4b5b3a" alt="Second Image">
+        <div class="caption">Caption for the second image</div>
+        <img src="https://images.unsplash.com/photo-1600585154320-1b5f8f4b5b3a" alt="Third Image">
+        <div class="caption">Caption for the third image</div>
+    </div>
     <script>
-        const images = [
-            {
-                url: "https://source.unsplash.com/featured/?nature",
-                caption: "Beautiful Nature"
-            },
-            {
-                url: "https://source.unsplash.com/featured/?city",
-                caption: "City Life"
-            }
-        ];
-
-        const gallery = document.getElementById('gallery');
-
-        images.forEach(image => {
-            const imgElement = document.createElement('img');
-            imgElement.src = image.url;
-            imgElement.alt = image.caption;
-            imgElement.onload = () => imgElement.classList.add('loaded');
-
-            const captionElement = document.createElement('div');
-            captionElement.className = 'caption';
-            captionElement.innerText = image.caption;
-
-            gallery.appendChild(imgElement);
-            gallery.appendChild(captionElement);
-        });
-
-        document.getElementById('toggle-theme').addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
+        const themeToggleButton = document.getElementById('theme-toggle');
+        themeToggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            document.body.classList.toggle('light');
         });
     </script>
-    <!-- build-id: 2023-10-01T12:00:00Z -->
+    <!-- build-id: 2023-10-05T12:00:00Z -->
 </body>
 </html>
-<!-- build-id: 2025-10-16T12:27:22.582628 -->
+<!-- build-id: 2025-10-16T12:39:05.085912 -->
